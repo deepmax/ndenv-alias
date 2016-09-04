@@ -1,27 +1,29 @@
-pyenv-alias
+ndenv-alias
 ===========
 
-pyenv-alias is a [pyenv](https://github.com/yyuu/pyenv) plugin which allows you
-to specify a 'version name alias' when installing python.
+ndenv-alias is a [ndenv](https://github.com/riywo/ndenv) and [node-build](https://github.com/riywo/node-build) plugin which allows you to specify a 'version name alias' when installing node.js/io.js.
 
-Out of the box, pyenv does not allow you to install multiple copies of the same
-python version. This can be limiting in situations where you want to have
-different instances of python with, for example, different compile-time
-configurations.
+Out of the box, ndenv(node-build) does not allow you to install multiple copies of the same
+node.js/io.js version. This can be limiting in situations where you want to have
+different instances of node.js/io.js with.
+
+
+Note: This project is a node.js version of [pyenv-alias](https://github.com/s1341/pyenv-alias).
+
 
 ## Installation
 
 ```
-git clone https://github.com/s1341/pyenv-alias.git $(pyenv root)/plugins/pyenv-alias
+git clone https://github.com/deepmax/ndenv-alias.git $(ndenv root)/plugins/ndenv-alias
 ```
 
 ## Usage
 
 Specify the version alias name using the `VERSION_ALIAS` environment variable
-when performing a `pyenv install`
+when performing a `ndenv install`
 
-For example, building a version of python 2.7.6 with the shared `.so`:
+For example, building a version of node.js 6.5.0:
 
 ```
-VERSION_ALIAS="2.7.6_shared" PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 2.7.6
+VERSION_ALIAS="my_nodejs" ndenv install v6.5.0
 ```
